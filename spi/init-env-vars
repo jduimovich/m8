@@ -1,6 +1,6 @@
 
 
-export AUTH_TOKEN=$(cat /mnt/c/Users/jduim/.kube/cache/oidc-login/* | jq -r '.id_token')
+export AUTH_TOKEN=$(cat /mnt/c/Users/jduim/.kube/cache/oidc-login/* | jq -r '.id_token' | dos2unix)
 
 export UPLOAD_URL=$(kubectl get SPIAccessTokenBinding test-access-token-binding -o yaml | yq .status.uploadUrl)
 
