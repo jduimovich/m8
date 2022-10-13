@@ -1,0 +1,8 @@
+apiVersion: appstudio.redhat.com/v1alpha1
+kind: ComponentDetectionQuery 
+metadata:
+  name: cdq-private
+spec:  
+  git:
+    url:  https://github.com/jduimovich/private-dockerfile
+

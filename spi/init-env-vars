@@ -1,0 +1,10 @@
+
+
+export AUTH_TOKEN=$(cat /mnt/c/Users/jduim/.kube/cache/oidc-login/* | jq -r '.id_token')
+
+export UPLOAD_URL=$(kubectl get SPIAccessTokenBinding test-access-token-binding -o yaml | yq .status.uploadUrl)
+
+LEN=$(echo $AUTH_TOKEN | wc -c)
+echo "SPI Access Token wc is $LEN chars" 
+echo "UPLOAD_URL = $UPLOAD_URL " 
+

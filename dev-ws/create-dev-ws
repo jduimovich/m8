@@ -1,0 +1,10 @@
+kubectl kcp workspace create dev --enter
+echo "apiVersion: apis.kcp.dev/v1alpha1       
+kind: APIBinding
+metadata:
+  name: acm-kubernetes
+spec:
+  reference:
+    workspace:
+      path: root:redhat-acm-compute
+      exportName: kubernetes" | kubectl create -f -

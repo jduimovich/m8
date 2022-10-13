@@ -1,0 +1,15 @@
+cat <<EOF | kubectl apply -f -
+apiVersion: appstudio.redhat.com/v1beta1
+kind: SPIAccessTokenBinding
+metadata:
+  name: test-access-token-binding
+spec:                                                                                                                                                          
+  permissions:                                                                                                                                                 
+    required:                                                                                                                                                  
+    - area: repository                                                                                                                                         
+      type: rw                                                                                                                                 
+  repoUrl: https://github.com/jduimovich/public-dockerfile                                                                              
+  secret:                                                                                                                                                                                                                                                                                                    
+    type: kubernetes.io/basic-auth
+EOF
+echo 'Binding created'

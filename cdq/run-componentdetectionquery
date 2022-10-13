@@ -1,0 +1,4 @@
+
+
+kubectl apply -f cdq-public.yaml
+kubectl apply -f cdq-private.yaml
